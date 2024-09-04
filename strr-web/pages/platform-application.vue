@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import steps from '../page-data/platform-application-steps'
 import { FormPageI } from '@/interfaces/form/form-page-i'
+import Step1ContactInformation from '~/components/platformApplication/Step1ContactInformation.vue'
 
 const { t } = useTranslation()
 
@@ -41,19 +42,16 @@ definePageMeta({
           :steps="steps"
           @change-step="setActiveStep"
         />
-        <div class="mt-8">
+        <div class="">
+          <div class="mobile:px-[8px]">
+            <BcrosTypographyH2 :text="t(activeStep.title)" class="py-[32px]" />
+          </div>
           <div v-if="activeStepIndex === 0" :key="activeStepIndex">
-            [Step 1]
+            <Step1ContactInformation />
           </div>
-          <div v-if="activeStepIndex === 1" :key="activeStepIndex">
-            [Step 2]
-          </div>
-          <div v-if="activeStepIndex === 2" :key="activeStepIndex">
-            [Step 3]
-          </div>
-          <div v-if="activeStepIndex === 3" :key="activeStepIndex">
-            [Step 4]
-          </div>
+          <div v-if="activeStepIndex === 1" :key="activeStepIndex" />
+          <div v-if="activeStepIndex === 2" :key="activeStepIndex" />
+          <div v-if="activeStepIndex === 3" :key="activeStepIndex" />
         </div>
       </div>
       <div class="shrink mobile:grow">

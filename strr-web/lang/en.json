@@ -314,21 +314,39 @@
       "title": "Step 4 - Review and Confirm"
     }
   },
+  "common": {
+    "yourName": "Your Name",
+    "addAnotherContact": "Add Another Contact",
+    "disclaimerSbcConnect": "This is your legal name as it appears on your SBC Connect Account.",
+    "contactDetails": "Contact Details",
+    "removeButton": "Remove"
+  },
   "platformApplication": {
     "header": "Short-Term Rental Platform Application",
     "stepper": {
-      "step1": {
-        "label": "Contact Information"
-      },
-      "step2": {
-        "label": "Business Details"
-      },
-      "step3": {
-        "label": "Platform Information"
-      },
-      "step4": {
-        "label": "Review and Confirm"
-      }
+      "step1Label": "Contact Information",
+      "step2Label": "Business Details",
+      "step3Label": "Platform Information",
+      "step4Label": "Review and Confirm"
+    },
+    "step1": {
+      "title": "Step 1 - Contact Information",
+      "subtitle": "Contact information for you and the platform representative",
+      "primary": "Primary Contact Information",
+      "platformRepSelect": "Are you a platform representative?",
+      "platformRep": "Platform Representative",
+      "secondaryPlatformRep": "Secondary Platform Representative",
+      "personCompletingApplication": "Person Completing Platform Application",
+      "alertMessage": "Email will be the default method of communication for notices sent to registrants."
+    },
+    "step2": {
+      "title": "Step 2 - Business Details"
+    },
+    "step3": {
+      "title": "Step 3 - Platform Information"
+    },
+    "step4": {
+      "title": "Step 3 - Review and Confirm"
     }
   },
   "account": {

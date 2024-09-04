@@ -26,12 +26,13 @@ export const submitCreateAccountForm = (
     propertyType,
     ownershipType
   )
-  axiosInstance.post(`${apiURL}/registrations`,
-    { ...formData }
-  )
+  axiosInstance
+    .post(`${apiURL}/registrations`, { ...formData })
     .then((response) => {
       const data = response?.data
-      if (!data) { throw new Error('Invalid AUTH API response') }
+      if (!data) {
+        throw new Error('Invalid AUTH API response')
+      }
       return data
     })
     .then((data) => {
@@ -238,6 +239,47 @@ export const formState: CreateAccountFormStateI = reactive({
     agreeToSubmit: false
   },
   supportingDocuments: []
+})
+
+export const platformState = reactive<PlatformApplicationI>({
+  registration: {
+    registrationType: RegistrationTypeE.PLATFORM,
+    registrant: {
+      firstName: '',
+      lastName: '',
+      phoneNumber: '',
+      extension: '',
+      faxNumber: '',
+      emailAddress: ''
+    } as RegistrantI,
+    platformRepresentatives: [{
+      firstName: '',
+      lastName: '',
+      phoneNumber: '',
+      extension: '',
+      faxNumber: '',
+      emailAddress: '',
+      jobTitle: ''
+    }] as PlatformRepresentativeI[],
+    businessDetails: {
+      legalName: '',
+      placeOfIncorporation: '',
+      businessNumber: '',
+      aliases: [] as string[],
+      mailingAddress: {
+        address: '',
+        addressLineTwo: '',
+        city: '',
+        postalCode: '',
+        province: '',
+        country: ''
+      } as MailingAddressI
+    } as BusinessDetailsI,
+    platformDetails: {
+      providers: [{ name: '', website: '' }] as ProviderI[],
+      hasMoreThanThousandListings: false
+    }
+  }
 })
 
 const primaryContactAPI: ContactAPII = {
